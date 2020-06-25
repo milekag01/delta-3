@@ -77,3 +77,6 @@ Route::group(['prefix' => '/api/'], function()
     Route::put('credentials/{id}', 'CredentialsController@updateCredential');
     Route::delete('credentials/{id}', 'CredentialsController@removeCredential');
 });
+
+//----------------- Admin routes
+Route::get('admin','AdminController@index');
