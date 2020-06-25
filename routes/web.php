@@ -21,3 +21,10 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('register', function(){ return View::make('register')->with('pTitle', "Register"); })->name('register');
 Route::get('login', function(){ return View::make('login')->with('pTitle', "Login"); })->name('login');
 Route::get('faq', function(){ return View::make('faq')->with('pTitle', "FAQ"); })->name('faq');
+
+//----------------- User routes
+Route::resource('users', 'UsersController', array('only' => array('show')));
+Route::post('login', 'UsersController@login');
+Route::post('make', 'UsersController@register');
+Route::get('logout', 'UsersController@logout')->name('logout');
+Route::post('resetPassword/{id}','UsersController@resetPassword');
