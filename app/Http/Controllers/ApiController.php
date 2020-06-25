@@ -13,7 +13,7 @@ use App\Project;
 use App\Task;
 use App\Credential;
 
-class ApiController extends Controller
+class ApiController extends BaseController
 {
     //
 }
