@@ -28,3 +28,14 @@ Route::post('login', 'UsersController@login');
 Route::post('make', 'UsersController@register');
 Route::get('logout', 'UsersController@logout')->name('logout');
 Route::post('resetPassword/{id}','UsersController@resetPassword');
+
+//----------------- Auth routes
+Route::group(array('before' => 'auth'), function()
+{
+	Route::get('hud', 'HomeController@index')->name('hud');
+	Route::get('search', 'HomeController@search')->name('search');
+	Route::get('profile', 'UsersController@index')->name('profile');
+	Route::get('clients', 'ClientsController@index')->name('clients');
+	Route::delete('clients/{id}', 'ClientsController@destroy');
+    Route::resource('projects', 'ProjectsController', array('only' => array('show')));
+});
