@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('register', function(){ return View::make('register')->with('pTitle', "Register"); })->name('register');
+Route::get('login', function(){ return View::make('login')->with('pTitle', "Login"); })->name('login');
+Route::get('faq', function(){ return View::make('faq')->with('pTitle', "FAQ"); })->name('faq');
