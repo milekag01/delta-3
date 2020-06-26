@@ -21,7 +21,7 @@
             
             <div class="form-group">
                 <label for="email" class="color-primary">Email:</label>
-                <input type="email" class="form-control" name="email" placeholder="Email" required>
+                <input type="text" class="form-control" name="email" placeholder="Email" required>
                 <!-- {!! Form::text('email', null, array('class' => 'form-control', "placeholder" => "Email" )) !!} -->
             </div>
             

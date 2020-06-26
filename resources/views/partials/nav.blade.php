@@ -8,11 +8,15 @@
 	</a>
 </div>
 
-{!! Form::open(array('action' => 'HomeController@search','method' => 'get')) !!}
-	<div class="form-group search">
-		{!! Form::text( 'q', null, array('class' => 'form-control search-bar', "placeholder" => "Search" )) !!}
-	</div>	    			
-{!! Form::close() !!}	
+<!-- {!! Form::open(array('action' => 'HomeController@search','method' => 'get')) !!} -->
+	<form action="/search" method="get">
+		<div class="form-group search">
+			<input type="text" name="q" class="form-control search-bar" placeholder="Search">
+			<!-- {!! Form::text( 'q', null, array('class' => 'form-control search-bar', "placeholder" => "Search" )) !!} -->
+		</div>
+	</form>
+		    			
+<!-- {!! Form::close() !!}	 -->
 
 <div class="menu">
 	<a class="<?php echo ( Request::is('hud') ) ? 'active' : 'false'; ?> <?php echo ( Request::is('/') ) ? 'active' : 'false'; ?>" href="{{ route('home') }}"><i class="icon ion-ios-home"></i> Hud</a>

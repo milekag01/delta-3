@@ -116,22 +116,27 @@
                                 <div class="item" id="settings">
 
                                     <label>Current Password</label>
-                                    {!! Form::open(array('action' => array('UsersController@resetPassword', Auth::id() ))) !!}
+                                    <form action="/resetPassword/{{user.password}}" method="post">
+                                        <div class="form-group">
+                                            <input type="password" name="current_pwd" class="form-control" placeholder="Current Password">
+                                            <!-- {!! Form::password( 'current_pwd', array('class' => 'form-control', "placeholder" => "Current Password" )) !!} -->
+                                        </div>
+                                        <label>New Password</label>
+                                        <div class="form-group">
+                                            <!-- {!! Form::password( 'new_pwd', array('class' => 'form-control', "placeholder" => "New Password" )) !!} -->
+                                            <input type="password" name="new_pwd" class="form-control" placeholder="New Password">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="submit" value="Update Password" class="btn btn-default pull-right">
+                                            <!-- {!! Form::submit( 'Update Password', array('class' => 'btn btn-default pull-right')) !!} -->
+                                            <div class="clearfix"></div>
+                                        </div>
+                               
+                                    </form>
+                                    <!-- {!! Form::open(array('action' => array('UsersController@resetPassword', Auth::id() ))) !!} -->
                                 
-                                    <div class="form-group">
-                                        {!! Form::password( 'current_pwd', array('class' => 'form-control', "placeholder" => "Current Password" )) !!}
-                                    </div>
-
-                                    <label>New Password</label>
-                                    <div class="form-group">
-                                        {!! Form::password( 'new_pwd', array('class' => 'form-control', "placeholder" => "New Password" )) !!}
-                                    </div>
-                                    <div class="form-group">
-                                        {!! Form::submit( 'Update Password', array('class' => 'btn btn-default pull-right')) !!}
-                                        <div class="clearfix"></div>
-                                    </div>
                                 
-                                    {!! Form::close() !!}
+                                    <!-- {!! Form::close() !!} -->
                                     <hr>
 
                                     <label>Delete account</label>
