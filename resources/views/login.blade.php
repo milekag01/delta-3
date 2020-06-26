@@ -12,27 +12,22 @@
 
         <hr>
         <form action="/login" method="post">
+        
             <div class="form-group">
                 <label for="email" class="color-primary">Email:</label>
-                <input type="text" name="email" class="form-control" placeholder="Email" autofocus>
-                <!-- {!! Form::text( 'email', null, array('class' => 'form-control', "placeholder" => "Email","autofocus" => "true" )) !!} -->
-            </div>
-            
+                <input type="text" name="email" class="form-control" placeholder="Email" autofocus>      
+            </div>         
             <div class="form-group">
                 <label for="password" class="color-primary">Password:</label>
                 <input type="password" class="form-control" name="password" placeholder="Password" required>
-                <!-- {!! Form::password( 'password', array('class' => 'form-control', "placeholder" => "Password" )) !!} -->
             </div>
             
             <div class="form-group">
-                <!-- {!! Form::submit( 'Login', array('class' => 'btn btn-primary btn-wide')) !!} -->
+
                 <input type="submit" value="Login" class="btn btn-primary btn-wide">
             </div>
         </form>
-        <!-- {!! Form::open(array('action' => 'UsersController@login')) !!} -->
-        
-        
-        <!-- {!! Form::close() !!} -->
+
         <p>Don't have an account? <a href="{{ route('register') }}">register</a></p>
     </div>
 @stop
