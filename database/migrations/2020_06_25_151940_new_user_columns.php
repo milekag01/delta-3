@@ -15,12 +15,12 @@ class NewUserColumns extends Migration
     {
         //
         Schema::table('users', function (Blueprint $table) {
-            $table->string('title');
-            $table->string('bio');
-            $table->string('link');
-            $table->string('twitter');
-            $table->string('facebook');
-            $table->string('linkedin');
+            $table->string('title')->nullable();
+            $table->string('bio')->nullable();
+            $table->string('link')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('linkedin')->nullable();
         });
     }
 

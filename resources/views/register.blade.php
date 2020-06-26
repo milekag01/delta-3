@@ -13,6 +13,7 @@
         <hr>
         
         <form action="/make" method="post">
+            @csrf
             <div class="form-group">
                 <label for="fullName" class="color-primary">Full Name:</label>
                 <input type="text" class="form-control" name="fullName" placeholder="Full Name" autofocus required>

@@ -9,6 +9,7 @@
 </div>
 
 <form action="/search" method="get">
+	@csrf
 	<div class="form-group search">
 		<input type="text" name="q" class="form-control search-bar" placeholder="Search">
 	</div>

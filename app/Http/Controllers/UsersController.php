@@ -33,8 +33,8 @@ class UsersController extends BaseController
 	// Login the user
 	public function login()
 	{				
-		$email = Input::get('email');
-		$password =	Input::get('password');
+		$email = request('email');
+		$password =	request('password');
 
 		// lets validate the users input
 		$validator = Validator::make(
@@ -63,9 +63,9 @@ class UsersController extends BaseController
 	// Register the user and start a new session
 	public function register()
 	{	
-		$fullName	=	Input::get('fullName');
-		$email 		=	Input::get('email');
-		$password	=	Input::get('password');	
+		$fullName	=	request('fullName');
+		$email 		=	request('email');
+		$password	=	request('password');	
 
 		// lets validate the users input
 		$validator = Validator::make(
@@ -93,7 +93,7 @@ class UsersController extends BaseController
 		$user->save();	
 
 		if ( Auth::attempt(array('email' => $email, 'password' => $password)) ) {
-			Helpers::sendWelcomeMail();
+			// Helpers::sendWelcomeMail();
 			return Redirect::to('hud');
 		}
 
@@ -117,8 +117,8 @@ class UsersController extends BaseController
 		}
 		// ----------------------------------------
 
-		$current_pwd = Input::get('current_pwd');
-		$new_pwd = Input::get('new_pwd');
+		$current_pwd = request('current_pwd');
+		$new_pwd = request('new_pwd');
 
 		// lets validate the users input
 		$validator = Validator::make(
@@ -158,11 +158,11 @@ class UsersController extends BaseController
     }
     // Update the given user
     public function updateUser($id){
-        if (strlen(trim(Input::get('email'))) === 0) {
+        if (strlen(trim(request('email'))) === 0) {
             return $this->setStatusCode(200)->makeResponse('You need to provide an email.');
         }
 
-        if( strlen(trim(Input::get('full_name'))) === 0 ){
+        if( strlen(trim(request('full_name'))) === 0 ){
             return $this->setStatusCode(200)->makeResponse('You have a name, no?');
         }
 

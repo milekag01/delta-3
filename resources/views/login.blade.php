@@ -12,7 +12,7 @@
 
         <hr>
         <form action="/login" method="post">
-        
+            @csrf
             <div class="form-group">
                 <label for="email" class="color-primary">Email:</label>
                 <input type="text" name="email" class="form-control" placeholder="Email" autofocus>      

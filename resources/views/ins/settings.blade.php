@@ -116,7 +116,9 @@
                                 <div class="item" id="settings">
 
                                     <label>Current Password</label>
+
                                     <form action="/resetPassword/{{user.password}}" method="post">
+                                        @csrf
                                         <div class="form-group">
                                             <input type="password" name="current_pwd" class="form-control" placeholder="Current Password">
                                         </div>
